@@ -155,7 +155,7 @@
   </main>
 
   <div id="sync-container">
-    <!-- Mitad Superior: Buscador y Reproductor Integrado todo EN LA MISMA PÁGINA -->
+    <!-- Mitad Superior: Buscador y Reproductor Integrado sin bloqueos -->
     <div id="media-wrapper">
       <div id="search-bar-container">
         <div class="search-box">
@@ -163,7 +163,6 @@
           <button onclick="buscarInterno()">Buscar en Sitio</button>
         </div>
       </div>
-      <!-- Aquí adentro se abrirá el menú y los videos de forma secreta -->
       <iframe id="video-frame" src="https://yewtu.be/feed/trending" title="Contenido"></iframe>
     </div>
     
@@ -183,7 +182,6 @@
     function buscarInterno() {
       var query = document.getElementById('yt-query').value;
       if (query.trim() !== "") {
-        // Carga los resultados de búsqueda directamente DENTRO del cuadro de arriba, sin abrir pestañas nuevas
         document.getElementById('video-frame').src = "https://yewtu.be/search?q=" + encodeURIComponent(query);
       }
     }
