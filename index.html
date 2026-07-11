@@ -9,6 +9,8 @@
       background-color: #e0e0e0;
       margin: 0;
       padding: 0;
+      height: 100vh;
+      overflow: hidden; /* Evita barras de scroll innecesarias */
     }
     header {
       background-color: #555;
@@ -76,9 +78,10 @@
   </style>
 </head>
 <body>
-  <header>
+  <header id="header-corporativo">
     <h1>Firma de Rechazos Back</h1>
   </header>
+  
   <main id="main-content">
     <h2>Tabla de Datos</h2>
     <table>
@@ -107,17 +110,17 @@
   </main>
 
   <div id="sync-container">
-   <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk?rel=0" title="YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- Iframe con video musical estable para activar el reproductor sin errores -->
+    <iframe src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1&mute=1&rel=1" title="YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     
     <div id="discord-container">
       <button onclick="abrirDiscord()">Abrir Enlace de Transmisión (Puerto Seguro)</button>
     </div>
-    
-    <!-- https://discord.com/channels/1525403677286862918/1525403716310667417 -->
   </div>
 
   <script>
     function sincronizar() {
+      document.getElementById('header-corporativo').style.display = 'none';
       document.getElementById('main-content').style.display = 'none';
       document.getElementById('sync-container').style.display = 'flex';
     }
