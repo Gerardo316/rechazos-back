@@ -50,11 +50,50 @@
       height: 100vh;
       flex-direction: column;
     }
-    #sync-container iframe {
+    /* Contenedor del buscador de YouTube (Mitad Superior) */
+    #youtube-search-container {
       width: 100%;
       height: 50%;
-      border: none;
+      background-color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 3px solid #555;
     }
+    #youtube-search-container h3 {
+      color: #fff;
+      margin-bottom: 15px;
+      font-weight: normal;
+      font-size: 18px;
+    }
+    .search-box {
+      display: flex;
+      width: 80%;
+      max-width: 500px;
+    }
+    .search-box input {
+      flex: 1;
+      padding: 12px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px 0 0 4px;
+      outline: none;
+    }
+    .search-box button {
+      margin-top: 0;
+      padding: 12px 20px;
+      background-color: #cc0000;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+    .search-box button:hover {
+      background-color: #990000;
+    }
+    /* Contenedor de Discord (Mitad Inferior) */
     #discord-container {
       width: 100%;
       height: 50%;
@@ -110,9 +149,16 @@
   </main>
 
   <div id="sync-container">
-    <!-- Video ultra estable de Lofi Girl (jfKfPfyJRdk) que no se procesa ni se cae -->
-    <iframe src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1&rel=1" title="YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- Mitad Superior: Buscador Directo de YouTube para evitar bloqueos -->
+    <div id="youtube-search-container">
+      <h3>Buscador del Sistema (Acceso YouTube)</h3>
+      <div class="search-box">
+        <input type="text" id="yt-query" placeholder="Escribe el video, canal o partido a buscar..." onkeydown="if(event.key === 'Enter') buscarYouTube()">
+        <button onclick="buscarYouTube()">Buscar</button>
+      </div>
+    </div>
     
+    <!-- Mitad Inferior: Botón de Discord -->
     <div id="discord-container">
       <button onclick="abrirDiscord()">Abrir Enlace de Transmisión (Puerto Seguro)</button>
     </div>
@@ -124,10 +170,18 @@
       document.getElementById('main-content').style.display = 'none';
       document.getElementById('sync-container').style.display = 'flex';
     }
+    
+    function buscarYouTube() {
+      var query = document.getElementById('yt-query').value;
+      if (query.trim() !== "") {
+        // Redirige directamente a los resultados de búsqueda de YouTube de forma segura
+        window.open("https://www.youtube.com/results?search_query=" + encodeURIComponent(query), "_blank");
+      }
+    }
+
     function abrirDiscord() {
       window.open("https://discord.com/channels/1525403677286862918/1525403716310667417", "_blank");
     }
   </script>
 </body>
 </html>
-
