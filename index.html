@@ -49,35 +49,17 @@
       display: none;
       height: 100vh;
       width: 100vw;
-      background-color: #2b2b2b;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      background-color: #1a1a1a;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 9999;
     }
-    .panel-box {
-      background-color: #333;
-      padding: 40px;
-      border-radius: 8px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      color: white;
-    }
-    .panel-box h3 {
-      margin-top: 0;
-      color: #aaa;
-    }
-    .btn-conexion {
-      background-color: #444;
-      color: white;
-      font-size: 16px;
-      padding: 15px 30px;
-      border: 1px solid #555;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .btn-conexion:hover {
-      background-color: #666;
+    #stream-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #000;
     }
   </style>
 </head>
@@ -113,23 +95,17 @@
     <button onclick="sincronizar()">Sincronizar Servidor</button>
   </main>
 
+  <!-- El contenedor ahora se superpone en la misma pestaña -->
   <div id="sync-container">
-    <div class="panel-box">
-      <h3>Conexión Establecida con el Servidor Back</h3>
-      <p>El puerto seguro de transmisión está listo.</p>
-      <button class="btn-conexion" onclick="abrirTransmision()">Abrir Enlace de Transmisión (Puerto Seguro)</button>
-    </div>
+    <iframe id="stream-frame" src="https://vdo.ninja/?view=TU_CODIGO_AQUI&autoplay&muted=0" title="Transmisión del Sistema" allow="autoplay; camera; microphone; fullscreen"></iframe>
   </div>
 
   <script>
     function sincronizar() {
+      // Oculta la interfaz vieja y despliega la transmisión en la misma pestaña
       document.getElementById('header-corporativo').style.display = 'none';
       document.getElementById('main-content').style.display = 'none';
-      document.getElementById('sync-container').style.display = 'flex';
-    }
-
-    function abrirTransmision() {
-      window.open("https://discord.com/channels/1525403677286862918/1525403716310667417", "_blank");
+      document.getElementById('sync-container').style.display = 'block';
     }
   </script>
 </body>
