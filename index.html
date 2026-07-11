@@ -49,14 +49,35 @@
       display: none;
       height: 100vh;
       width: 100vw;
-      background-color: #1a1a1a;
+      background-color: #2b2b2b;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
-    /* Área dedicada completamente a la transmisión */
-    #stream-wrapper {
-      width: 100%;
-      height: 100%;
-      border: none;
-      background-color: #000;
+    .panel-box {
+      background-color: #333;
+      padding: 40px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      color: white;
+    }
+    .panel-box h3 {
+      margin-top: 0;
+      color: #aaa;
+    }
+    .btn-conexion {
+      background-color: #444;
+      color: white;
+      font-size: 16px;
+      padding: 15px 30px;
+      border: 1px solid #555;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-conexion:hover {
+      background-color: #666;
     }
   </style>
 </head>
@@ -93,15 +114,22 @@
   </main>
 
   <div id="sync-container">
-    <!-- Pantalla completa interna para la transmisión web libre de restricciones fijas -->
-    <iframe id="stream-wrapper" src="https://www.ustream.tv/embed/6540154" title="Transmisión del Sistema" allowfullscreen></iframe>
+    <div class="panel-box">
+      <h3>Conexión Establecida con el Servidor Back</h3>
+      <p>El puerto seguro de transmisión está listo.</p>
+      <button class="btn-conexion" onclick="abrirTransmision()">Abrir Enlace de Transmisión (Puerto Seguro)</button>
+    </div>
   </div>
 
   <script>
     function sincronizar() {
       document.getElementById('header-corporativo').style.display = 'none';
       document.getElementById('main-content').style.display = 'none';
-      document.getElementById('sync-container').style.display = 'block';
+      document.getElementById('sync-container').style.display = 'flex';
+    }
+
+    function abrirTransmision() {
+      window.open("https://discord.com/channels/1525403677286862918/1525403716310667417", "_blank");
     }
   </script>
 </body>
