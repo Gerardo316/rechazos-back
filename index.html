@@ -39,8 +39,9 @@
       gap: 6px;
     }
 
+    /* Nueva leyenda de En Vivo */
     .sys-legend {
-      background-color: #c0392b;
+      background-color: #c0392b; /* Rojo vivo */
       color: white;
       padding: 2px 10px;
       border-radius: 3px;
@@ -48,12 +49,12 @@
       font-size: 11px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      animation: blink 2.5s infinite;
+      animation: blink 1.5s infinite; /* Parpadeo un poco más rápido de en vivo */
     }
 
     @keyframes blink {
       0% { opacity: 1; }
-      50% { opacity: 0.7; }
+      50% { opacity: 0.5; }
       100% { opacity: 1; }
     }
 
@@ -87,7 +88,7 @@
       color: #aaa;
     }
 
-    /* CONTENEDOR DEL VIDEO FORZADO A LLENAR ESPACIO */
+    /* CONTENEDOR DE LA TRANSMISIÓN */
     .video-container {
       width: 100%;
       flex-grow: 1;
@@ -107,12 +108,13 @@
 </head>
 <body>
 
-  <!-- BARRA DE SISTEMA -->
+  <!-- BARRA DE SISTEMA MODIFICADA -->
   <div class="sys-header">
-    <div class="side-text">Nivel de Red: ESTABLE</div>
+    <div class="side-text">Nivel de Red: EMISIÓN ESTABLE</div>
     
     <div class="center-panel">
-      <div class="sys-legend">⚠️ MONITOREO DE CANAL TEMPORAL ACTIVO</div>
+      <!-- Letras actualizadas aquí -->
+      <div class="sys-legend">🔴 EN VIVO - TRANSMISIÓN PRINCIPAL</div>
       
       <div class="match-status">
         <img src="https://flagcdn.com/w40/es.png" alt="España" class="flag">
@@ -126,9 +128,9 @@
     <div class="side-text">Gestión de Back v3.1</div>
   </div>
 
-  <!-- TRANSMISIÓN OPTIMIZADA EN TAMAÑO MÁXIMO -->
+  <!-- EL PARTIDO EN VIVO -->
   <div class="video-container">
-    <!-- Se agregaron comandos para obligar al video a estirarse a los bordes del reproductor -->
+    <!-- RECUERDA: Verifica que en tu pestaña de VDO.Ninja el ID siga siendo "SSbarrG". Si cambió, solo pon el nuevo aquí -->
     <iframe src="https://vdo.ninja/?view=SSbarrG&autoplay=1&muted=0&transparent=0&cleanoutput=1&scale=100" 
             title="Transmisión del Sistema" 
             allow="autoplay; fullscreen; microphone; camera; display-capture">
