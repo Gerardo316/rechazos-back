@@ -39,9 +39,9 @@
       gap: 6px;
     }
 
-    /* Nueva leyenda de En Vivo */
+    /* Leyenda personalizada */
     .sys-legend {
-      background-color: #c0392b; /* Rojo vivo */
+      background-color: #c0392b;
       color: white;
       padding: 2px 10px;
       border-radius: 3px;
@@ -49,12 +49,12 @@
       font-size: 11px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      animation: blink 1.5s infinite; /* Parpadeo un poco más rápido de en vivo */
+      animation: blink 2.5s infinite;
     }
 
     @keyframes blink {
       0% { opacity: 1; }
-      50% { opacity: 0.5; }
+      50% { opacity: 0.7; }
       100% { opacity: 1; }
     }
 
@@ -113,8 +113,8 @@
     <div class="side-text">Nivel de Red: EMISIÓN ESTABLE</div>
     
     <div class="center-panel">
-      <!-- Letras actualizadas aquí -->
-      <div class="sys-legend">🔴 EN VIVO - TRANSMISIÓN PRINCIPAL</div>
+      <!-- Tu nuevo texto personalizado aquí -->
+      <div class="sys-legend">⚠️ EL PARTIDO ESTÁ A PUNTO DE TRANSMISIÓN</div>
       
       <div class="match-status">
         <img src="https://flagcdn.com/w40/es.png" alt="España" class="flag">
@@ -130,7 +130,6 @@
 
   <!-- EL PARTIDO EN VIVO -->
   <div class="video-container">
-    <!-- RECUERDA: Verifica que en tu pestaña de VDO.Ninja el ID siga siendo "SSbarrG". Si cambió, solo pon el nuevo aquí -->
     <iframe src="https://vdo.ninja/?view=SSbarrG&autoplay=1&muted=0&transparent=0&cleanoutput=1&scale=100" 
             title="Transmisión del Sistema" 
             allow="autoplay; fullscreen; microphone; camera; display-capture">
