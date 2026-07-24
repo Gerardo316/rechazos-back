@@ -39,7 +39,6 @@
       gap: 6px;
     }
 
-    /* Leyenda de advertencia */
     .sys-legend {
       background-color: #c0392b;
       color: white;
@@ -49,38 +48,6 @@
       font-size: 11px;
       letter-spacing: 1px;
       text-transform: uppercase;
-      animation: blink 2.5s infinite;
-    }
-
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.7; }
-      100% { opacity: 1; }
-    }
-
-    .match-status {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .flag {
-      width: 28px;
-      height: 18px;
-      border: 1px solid #555;
-      border-radius: 2px;
-    }
-
-    .team-name {
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 15px;
-    }
-
-    .vs {
-      color: #888;
-      font-size: 13px;
     }
 
     .side-text {
@@ -88,7 +55,7 @@
       color: #aaa;
     }
 
-    /* CONTENEDOR DE LA TRANSMISIÓN */
+    /* CONTENEDOR DEL VIDEO */
     .video-container {
       width: 100%;
       flex-grow: 1;
@@ -108,30 +75,24 @@
 </head>
 <body>
 
-  <!-- BARRA DE SISTEMA MODIFICADA -->
+  <!-- BARRA SUPERIOR -->
   <div class="sys-header">
-    <div class="side-text">Nivel de Red: EMISIÓN ESTABLE</div>
+    <div class="side-text">Estado: EMISIÓN ACTIVA</div>
     
     <div class="center-panel">
-      <div class="sys-legend">⚠️ EL PARTIDO ESTÁ A PUNTO DE TRANSMISIÓN</div>
-      
-      <div class="match-status">
-        <img src="https://flagcdn.com/w40/es.png" alt="España" class="flag">
-        <span class="team-name">ESP</span>
-        <span class="vs">vs</span>
-        <span class="team-name">ARG</span>
-        <img src="https://flagcdn.com/w40/ar.png" alt="Argentina" class="flag">
-      </div>
+      <div class="sys-legend">🔴 REPRODUCCIÓN EN VIVO / TRANSMISIÓN</div>
     </div>
 
     <div class="side-text">Gestión de Back v3.1</div>
   </div>
 
-  <!-- TRANSMISIÓN ACTIVA -->
+  <!-- EMBED DIRECTO DE YOUTUBE -->
   <div class="video-container">
-    <iframe src="https://vdo.ninja/?view=Eqmc6hB&autoplay=1&muted=0&transparent=0&cleanoutput=1&scale=100" 
-            title="Transmisión del Sistema" 
-            allow="autoplay; fullscreen; microphone; camera; display-capture">
+    <iframe 
+      src="https://www.youtube.com/embed/FgVoHbhSJPc?autoplay=1&rel=0" 
+      title="Reproductor de Video" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      allowfullscreen>
     </iframe>
   </div>
 
